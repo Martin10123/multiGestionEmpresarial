@@ -15,6 +15,8 @@ export default {
       },
       screens: {
         md1: "800px",
+        lg1: "1250px",
+        lg2: "1400px",
       },
       backgroundImage: {
         "custom-gradient":

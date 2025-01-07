@@ -1,6 +1,7 @@
-import { SidebarOpciones } from "@/interfaces/data/SidebarInterfaces";
+import { SidebarOpciones } from "../../interfaces/data/SidebarInterfaces";
 import { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import { IoIosArrowDown } from "react-icons/io";
 
 interface Props {
   expanded: string | null;
@@ -29,7 +30,7 @@ export const ItemsSidebar = ({
         <div className="flex items-center gap-4 px-2.5 text-sm font-semibold md1:text-base">
           <img className="size-6" src={opcion.icono} alt={opcion.nombre} />
           <p
-            className={`${
+            className={`w-full sm:max-w-[125px] xl:max-w-full truncate ${
               expanded === opcion.nombre ? "text-secondary" : "text-white"
             } ${expandedSidebar ? "block" : "md1:hidden"}`}
           >
@@ -38,24 +39,11 @@ export const ItemsSidebar = ({
         </div>
 
         {opcion.subOpciones.length > 0 && (
-          <svg
-            className={`size-7 text-gray-400 pr-2.5 ${
+          <IoIosArrowDown
+            className={`size-7 text-white pr-2.5 ${
               expandedSidebar ? "block" : "md1:hidden"
             }`}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m19 9-7 7-7-7"
-            />
-          </svg>
+          />
         )}
       </div>
       <CSSTransition
@@ -69,7 +57,7 @@ export const ItemsSidebar = ({
           {opcion.subOpciones.map((subOpcion) => (
             <li
               key={subOpcion.nombre}
-              className="py-3 px-2.5 bg-[#ffffff09] rounded-lg hover:bg-white hover:bg-opacity-10 duration-150"
+              className="py-3 px-2.5 bg-[#ffffff09] rounded-lg hover:bg-white hover:bg-opacity-10 duration-150 truncate"
             >
               {subOpcion.nombre}
             </li>

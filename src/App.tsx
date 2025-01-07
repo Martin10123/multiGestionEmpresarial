@@ -1,9 +1,9 @@
-import { InicioPrincipalPantalla } from "./pages/InicioPrincipalPantalla";
+import { Dashboard } from "./pages/dashboard/Dashboard";
 
 function App() {
   return (
     <>
-      <InicioPrincipalPantalla />
+      <Dashboard />
     </>
   );
 }
