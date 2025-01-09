@@ -14,8 +14,8 @@ export const Dashboard = () => {
 
   return (
     <InicioTemplate>
-      <section className="p-4 md1:p-10 md1:pl-16 lg1:flex lg1:gap-4">
-        <div className="md1:max-w-[52rem] lg1:w-[52rem] lg1:border-r lg1:border-gray-200 lg1:pr-6">
+      <section className="p-4 md1:p-10 md1:pl-16 lg1:flex lg1:gap-4 w-full">
+        <div className="md1:max-w-[52rem] 2xl:w-[52rem] lg1:border-r lg1:border-gray-200 lg1:pr-6">
           <HeaderInfoUsario />
 
           <ListaItemsHeader />
