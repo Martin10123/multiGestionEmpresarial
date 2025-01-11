@@ -1,17 +1,17 @@
-import { SidebarOpciones } from "../../interfaces/data/SidebarInterfaces";
+import { SidebarOptions } from "../../interfaces/data/SidebarInterfaces";
 import { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { IoIosArrowDown } from "react-icons/io";
 
 interface Props {
   expanded: string | null;
-  handleToggle: (nombre: string) => void;
-  opcion: SidebarOpciones;
+  handleToggle: (name: string) => void;
+  option: SidebarOptions;
   expandedSidebar: boolean;
 }
 
 export const ItemsSidebar = ({
-  opcion,
+  option,
   expanded,
   handleToggle,
   expandedSidebar,
@@ -20,25 +20,25 @@ export const ItemsSidebar = ({
 
   return (
     <li
-      key={opcion.nombre}
+      key={option.name}
       className={`bg-[#ffffff24] py-4 px-2 rounded-lg cursor-pointer duration-300 md1:py-3 md1:${
         expandedSidebar ? "w-full" : "w-max"
       } md1:px-0 md1:group`}
-      onClick={() => handleToggle(opcion.nombre)}
+      onClick={() => handleToggle(option.name)}
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-4 px-2.5 text-sm font-semibold md1:text-base">
-          <img className="size-6" src={opcion.icono} alt={opcion.nombre} />
+          <img className="size-6" src={option.icon} alt={option.name} />
           <p
             className={`w-full sm:max-w-[125px] xl:max-w-full truncate ${
-              expanded === opcion.nombre ? "text-secondary" : "text-white"
+              expanded === option.name ? "text-secondary" : "text-white"
             } ${expandedSidebar ? "block" : "md1:hidden"}`}
           >
-            {opcion.nombre}
+            {option.name}
           </p>
         </div>
 
-        {opcion.subOpciones.length > 0 && (
+        {option.subOptions.length > 0 && (
           <IoIosArrowDown
             className={`size-7 text-white pr-2.5 ${
               expandedSidebar ? "block" : "md1:hidden"
@@ -47,19 +47,19 @@ export const ItemsSidebar = ({
         )}
       </div>
       <CSSTransition
-        in={expanded === opcion.nombre}
+        in={expanded === option.name}
         timeout={300}
         classNames="submenu"
         unmountOnExit
         nodeRef={nodeRef}
       >
         <ul ref={nodeRef} className="pl-10 mt-4 text-sm grid gap-2">
-          {opcion.subOpciones.map((subOpcion) => (
+          {option.subOptions.map((suboption) => (
             <li
-              key={subOpcion.nombre}
+              key={suboption.name}
               className="py-3 px-2.5 bg-[#ffffff09] rounded-lg hover:bg-white hover:bg-opacity-10 duration-150 truncate"
             >
-              {subOpcion.nombre}
+              {suboption.name}
             </li>
           ))}
         </ul>

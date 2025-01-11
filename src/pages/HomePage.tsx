@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InicioTemplate } from "../templates/InicioTemplate";
+import { InicioTemplate } from "../templates/HomeTemplate";
 
 export const InicioPrincipalPantalla = () => {
   const [openSidebar, setOpenSidebar] = useState(false);

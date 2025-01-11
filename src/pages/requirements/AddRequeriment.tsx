@@ -6,13 +6,13 @@ import { IoClose } from "react-icons/io5";
 
 const categories = ["Técnico", "Financiero", "Humano", "Legal", "Operativo"];
 
-interface AgregarRequerimientoProps {
+interface AddRequerimentProps {
   handleOpenAddRequeriment: () => void;
 }
 
-export const AgregarRequerimiento = ({
+export const AddRequeriment = ({
   handleOpenAddRequeriment,
-}: AgregarRequerimientoProps) => {
+}: AddRequerimentProps) => {
   useDisableScroll(true);
 
   const [previewFiles, setPreviewFiles] = useState<PreviewFile[]>([]);

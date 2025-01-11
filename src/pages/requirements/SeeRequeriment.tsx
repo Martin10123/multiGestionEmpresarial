@@ -1,15 +1,15 @@
-import { FiltrarPor } from "@/components/pages/requerimientos/FiltrarPor";
-import { TableRequeriment } from "@/components/pages/requerimientos/TableRequeriment";
+import { FilterBy } from "@/components/pages/requeriments/FilterBy";
+import { TableRequeriment } from "@/components/pages/requeriments/TableRequeriment";
 import { Pagination } from "@/components/Pagination";
 import { dataFake } from "@/data/dataFakeTable";
-import { listaCategorias, listaPrioridades } from "@/data/filtrarPor";
-import { InicioTemplate } from "@/templates/InicioTemplate";
+import { listCategories, listPriorities } from "@/data/filterBy";
+import { HomeTemplate } from "@/templates/HomeTemplate";
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdAddchart } from "react-icons/md";
-import { AgregarRequerimiento } from "./AgregarRequerimiento";
+import { AddRequeriment } from "./AddRequeriment";
 
-export const VerRequerimientos = () => {
+export const SeeRequeriment = () => {
   const [dataFakeOption] = useState(dataFake);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openAddRequeriment, setOpenAddRequeriment] = useState(false);
@@ -36,7 +36,7 @@ export const VerRequerimientos = () => {
   };
 
   return (
-    <InicioTemplate>
+    <HomeTemplate>
       <section className="w-full p-4 md1:p-10 md1:pl-16 overflow-auto">
         <div>
           <div className="w-full xl:grid xl:grid-cols-2 xl:gap-4 xl:mb-4">
@@ -64,16 +64,16 @@ export const VerRequerimientos = () => {
               </button>
 
               <div className="flex items-center justify-end gap-2 mt-4 xl:m-0">
-                <FiltrarPor
+                <FilterBy
                   title="Prioridad"
-                  items={listaPrioridades}
+                  items={listPriorities}
                   isOpen={openDropdown === "prioridad"}
                   toggleDropdown={() => toggleDropdown("prioridad")}
                 />
-                <FiltrarPor
+                <FilterBy
                   classNameDrop="right-0"
                   title="Categoria"
-                  items={listaCategorias}
+                  items={listCategories}
                   isOpen={openDropdown === "categoria"}
                   toggleDropdown={() => toggleDropdown("categoria")}
                 />
@@ -94,10 +94,8 @@ export const VerRequerimientos = () => {
       </section>
 
       {openAddRequeriment && (
-        <AgregarRequerimiento
-          handleOpenAddRequeriment={handleOpenAddRequeriment}
-        />
+        <AddRequeriment handleOpenAddRequeriment={handleOpenAddRequeriment} />
       )}
-    </InicioTemplate>
+    </HomeTemplate>
   );
 };

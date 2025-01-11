@@ -1,11 +1,11 @@
-export interface SidebarOpciones {
-  nombre: string;
-  icono: string;
-  redireccion: string;
-  subOpciones: SidebarSubOpciones[];
+export interface SidebarOptions {
+  name: string;
+  icon: string;
+  redirect: string;
+  subOptions: SidebarSubOptions[];
 }
 
-interface SidebarSubOpciones {
-  nombre: string;
-  redireccion: string;
+interface SidebarSubOptions {
+  name: string;
+  redirect: string;
 }

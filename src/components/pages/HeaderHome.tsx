@@ -1,10 +1,10 @@
 import { logoEmpresa } from "../../images";
 
-interface HeaderInicioProps {
+interface HeaderHomeProps {
   handleToggleSidebar: () => void;
 }
 
-export const HeaderInicio = ({ handleToggleSidebar }: HeaderInicioProps) => {
+export const HeaderHome = ({ handleToggleSidebar }: HeaderHomeProps) => {
   return (
     <header className="p-3 bg-tertiary sticky top-0 z-[9999] md1:border-b md1:border-quaternary">
       <nav className="flex justify-between items-center">

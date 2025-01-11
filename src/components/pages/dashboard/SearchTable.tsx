@@ -1,4 +1,4 @@
-export const BuscadorEnTabla = () => {
+export const SearchTable = () => {
   return (
     <div className="w-full flex justify-between items-center gap-4">
       <div className="flex flex-col gap-2 md1:flex-row md1:items-center md1:gap-4">

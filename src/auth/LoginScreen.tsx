@@ -1,6 +1,6 @@
 import { logoEmpresa } from "../images";
 
-export const IniciarSesionPantalla = () => {
+export const LoginScreen = () => {
   return (
     <section className="w-full p-4 flex justify-center items-center lg:grid lg:grid-cols-2 lg:gap-4 lg:h-screen before:content before:w-full before:h-screen before:fixed before:top-0 before:left-0 before:bg-custom-gradient before:-z-50 xl:w-[80%] xl:mx-auto">
       <div className="w-full flex flex-col items-center gap-6 lg:gap-8">

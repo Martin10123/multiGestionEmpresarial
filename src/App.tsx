@@ -1,10 +1,11 @@
 // import { Dashboard } from "./pages/dashboard/Dashboard";
-import { VerRequerimientos } from "./pages/requerimientos/VerRequerimientos";
+
+import { SeeRequeriment } from "./pages/requirements/SeeRequeriment";
 
 function App() {
   return (
     <>
-      <VerRequerimientos />
+      <SeeRequeriment />
     </>
   );
 }

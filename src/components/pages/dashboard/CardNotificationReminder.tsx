@@ -2,7 +2,7 @@ import { avatar } from "@/images";
 import { IoCheckmarkDoneSharp, IoLockOpenOutline } from "react-icons/io5";
 import { RiDeleteBinLine } from "react-icons/ri";
 
-export const TarjetaNotiReco = () => {
+export const CardNotificationReminder = () => {
   return (
     <div className="flex items-start gap-2 border-b border-quaternary py-2 rounded-md">
       <img

@@ -1,9 +1,9 @@
 import React from "react";
 import { CiFilter } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-import { FilterByType } from "@/interfaces/data/FiltrarPorTipos";
+import { FilterByType } from "@/interfaces/data/FilterByType";
 
-export const FiltrarPor: React.FC<FilterByType> = ({
+export const FilterBy: React.FC<FilterByType> = ({
   title,
   items,
   classNameDrop,

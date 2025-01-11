@@ -1,6 +1,6 @@
-import { ECOption } from "../../interfaces/echarts/GraficoLineal";
+import { ECOption } from "../../interfaces/echarts/lineGrafic";
 
-export const graficaLinealData: ECOption = {
+export const lineGraficData: ECOption = {
   tooltip: {
     trigger: "axis",
   },

@@ -1,9 +1,9 @@
-import { BuscadorEnTabla } from "./BuscadorEnTabla";
+import { SearchTable } from "./SearchTable";
 
-export const TablaDashboard = () => {
+export const TableDashboard = () => {
   return (
     <div className="py-6 grid gap-6">
-      <BuscadorEnTabla />
+      <SearchTable />
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 lg:text-base">

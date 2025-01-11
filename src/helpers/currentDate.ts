@@ -1,4 +1,4 @@
-export const fechaActual = () => {
+export const currentDate = () => {
   const dia = new Date().getDate();
   const mes = new Date().getMonth();
   const anio = new Date().getFullYear();

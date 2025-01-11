@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { sidebarOptions } from "../../data/sidebarOpciones";
+import { sidebarOptions } from "../../data/sidebarOptions";
 import { logoEmpresa } from "../../images";
 import { ItemsSidebar } from "./ItemsSidebar";
 import { HiMenuAlt3 } from "react-icons/hi";
 import clsx from "clsx";
 
-interface SidebarInicioProps {
+interface SidebarHomeProps {
   openSidebar: boolean;
   handleToggleSidebar: () => void;
 }
 
-export const SidebarInicio = ({
+export const SidebarHome = ({
   openSidebar,
   handleToggleSidebar,
-}: SidebarInicioProps) => {
+}: SidebarHomeProps) => {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [expandedSidebar, setExpandedSidebar] = useState<boolean>(true);
 
@@ -74,10 +74,10 @@ export const SidebarInicio = ({
         <ul className="flex flex-col gap-2 text-white">
           {sidebarOptions.map((opcion) => (
             <ItemsSidebar
-              key={opcion.nombre}
+              key={opcion.name}
               expanded={expanded}
               handleToggle={handleToggle}
-              opcion={opcion}
+              option={opcion}
               expandedSidebar={expandedSidebar}
             />
           ))}

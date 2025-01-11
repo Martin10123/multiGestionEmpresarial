@@ -1,30 +1,30 @@
-import { InicioTemplate } from "@/templates/InicioTemplate";
-import { graficaLinealData } from "@/data/echarts/GraficoLinealData";
+import { useState } from "react";
+import { HomeTemplate } from "@/templates/HomeTemplate";
+import { lineGraficData } from "@/data/echarts/lineGraficData";
 
 import { EChartComponent } from "@/components/pages/dashboard/EchartComponent";
-import { TablaDashboard } from "@/components/pages/dashboard/TablaDashboard";
-import { ListaItemsHeader } from "@/components/pages/dashboard/ListaItemsHeader";
-import { HeaderInfoUsario } from "@/components/pages/dashboard/HeaderInfoUsario";
-import { Recordatorios } from "@/components/pages/dashboard/Recordatorios";
-import { Notificaciones } from "@/components/pages/dashboard/Notificaciones";
-import { useState } from "react";
+import { TableDashboard } from "@/components/pages/dashboard/TableDashboard";
+import { ListItemsHeader } from "@/components/pages/dashboard/ListItemsHeader";
+import { HeaderInfoUser } from "@/components/pages/dashboard/HeaderInfoUser";
+import { Reminder } from "@/components/pages/dashboard/Reminder";
+import { Notifications } from "@/components/pages/dashboard/Notifications";
 
 export const Dashboard = () => {
   const [tabs, setTabs] = useState(1);
 
   return (
-    <InicioTemplate>
+    <HomeTemplate>
       <section className="p-4 md1:p-10 md1:pl-16 lg1:flex lg1:gap-4 w-full">
         <div className="md1:max-w-[52rem] 2xl:w-[52rem] lg1:border-r lg1:border-gray-200 lg1:pr-6">
-          <HeaderInfoUsario />
+          <HeaderInfoUser />
 
-          <ListaItemsHeader />
+          <ListItemsHeader />
 
           <div className="w-full h-[30rem] mt-4 bg-white rounded-lg shadow-md">
-            <EChartComponent options={graficaLinealData} />
+            <EChartComponent options={lineGraficData} />
           </div>
 
-          <TablaDashboard />
+          <TableDashboard />
         </div>
 
         <div className="hidden lg:block">
@@ -50,12 +50,12 @@ export const Dashboard = () => {
               </div>
             </div>
 
-            {tabs === 1 && <Recordatorios />}
+            {tabs === 1 && <Reminder />}
 
-            {tabs === 2 && <Notificaciones />}
+            {tabs === 2 && <Notifications />}
           </div>
         </div>
       </section>
-    </InicioTemplate>
+    </HomeTemplate>
   );
 };

@@ -1,12 +1,12 @@
 import { ReactNode, useState } from "react";
-import { HeaderInicio } from "../components/pages/HeaderInicio";
-import { SidebarInicio } from "../components/pages/SidebarInicio";
+import { HeaderHome } from "../components/pages/HeaderHome";
+import { SidebarHome } from "../components/pages/SidebarHome";
 
-interface InicioTemplateProps {
+interface HomeTemplateProps {
   children: ReactNode | ReactNode[];
 }
 
-export const InicioTemplate = ({ children }: InicioTemplateProps) => {
+export const HomeTemplate = ({ children }: HomeTemplateProps) => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -15,10 +15,10 @@ export const InicioTemplate = ({ children }: InicioTemplateProps) => {
 
   return (
     <>
-      <HeaderInicio handleToggleSidebar={handleToggleSidebar} />
+      <HeaderHome handleToggleSidebar={handleToggleSidebar} />
 
       <main className="md1:flex before:content before:w-full before:h-screen before:fixed before:top-0 before:left-0 before:bg-custom-gradient before:-z-50">
-        <SidebarInicio
+        <SidebarHome
           openSidebar={openSidebar}
           handleToggleSidebar={handleToggleSidebar}
         />

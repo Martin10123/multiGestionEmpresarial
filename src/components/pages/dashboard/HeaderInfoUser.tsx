@@ -1,6 +1,6 @@
-import { fechaActual } from "../../../helpers/fechaActual";
+import { currentDate } from "../../../helpers/currentDate";
 
-export const HeaderInfoUsario = () => {
+export const HeaderInfoUser = () => {
   return (
     <div className="flex flex-col gap-2 md1:flex-row md1:items-start md1:justify-between">
       <div>
@@ -17,7 +17,7 @@ export const HeaderInfoUsario = () => {
       </div>
 
       <div className="flex items-center justify-end gap-2">
-        <p className="text-base text-gray-800 font-semibold">{fechaActual()}</p>
+        <p className="text-base text-gray-800 font-semibold">{currentDate()}</p>
         <div className="p-2 rounded-full bg-tertiary cursor-pointer hover:bg-quaternary">
           <svg
             className="size-6 text-black"
