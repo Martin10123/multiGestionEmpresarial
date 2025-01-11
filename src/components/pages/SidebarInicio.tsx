@@ -34,7 +34,7 @@ export const SidebarInicio = ({
   return (
     <aside
       className={clsx(
-        "w-full h-full flex flex-col fixed top-0 left-0 z-[999] bg-tertiary overflow-auto duration-300 min-w-max transform transition-all md1:sticky md1:top-[4.55rem] md1:h-[calc(100vh-73px)] md1:translate-x-0 md1:transform-none",
+        "w-full h-full flex flex-col fixed top-0 left-0 z-[9999] bg-tertiary overflow-auto duration-300 min-w-max transform transition-all md1:sticky md1:top-[4.55rem] md1:h-[calc(100vh-73px)] md1:translate-x-0 md1:transform-none",
         {
           "md1:max-w-[22rem]": expandedSidebar,
           "md1:w-max": !expandedSidebar,

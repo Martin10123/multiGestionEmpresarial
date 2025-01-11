@@ -6,7 +6,7 @@ interface HeaderInicioProps {
 
 export const HeaderInicio = ({ handleToggleSidebar }: HeaderInicioProps) => {
   return (
-    <header className="p-3 bg-tertiary sticky top-0 md1:z-[9999] md1:border-b md1:border-quaternary">
+    <header className="p-3 bg-tertiary sticky top-0 z-[9999] md1:border-b md1:border-quaternary">
       <nav className="flex justify-between items-center">
         <figure>
           <img

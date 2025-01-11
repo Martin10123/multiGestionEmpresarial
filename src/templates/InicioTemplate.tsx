@@ -1,9 +1,9 @@
-import { ReactElement, useState } from "react";
+import { ReactNode, useState } from "react";
 import { HeaderInicio } from "../components/pages/HeaderInicio";
 import { SidebarInicio } from "../components/pages/SidebarInicio";
 
 interface InicioTemplateProps {
-  children: ReactElement | ReactElement[];
+  children: ReactNode | ReactNode[];
 }
 
 export const InicioTemplate = ({ children }: InicioTemplateProps) => {

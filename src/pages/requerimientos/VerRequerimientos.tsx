@@ -2,19 +2,17 @@ import { FiltrarPor } from "@/components/pages/requerimientos/FiltrarPor";
 import { TableRequeriment } from "@/components/pages/requerimientos/TableRequeriment";
 import { Pagination } from "@/components/Pagination";
 import { dataFake } from "@/data/dataFakeTable";
-import {
-  listaCategorias,
-  listaGrupos,
-  listaPrioridades,
-} from "@/data/filtrarPor";
+import { listaCategorias, listaPrioridades } from "@/data/filtrarPor";
 import { InicioTemplate } from "@/templates/InicioTemplate";
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdAddchart } from "react-icons/md";
+import { AgregarRequerimiento } from "./AgregarRequerimiento";
 
 export const VerRequerimientos = () => {
   const [dataFakeOption] = useState(dataFake);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openAddRequeriment, setOpenAddRequeriment] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -33,17 +31,18 @@ export const VerRequerimientos = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
+  const handleOpenAddRequeriment = () => {
+    setOpenAddRequeriment(!openAddRequeriment);
+  };
+
   return (
     <InicioTemplate>
-      <section className="w-full p-4 md1:p-10 md1:pl-16">
+      <section className="w-full p-4 md1:p-10 md1:pl-16 overflow-auto">
         <div>
-          <div className="w-full lg:grid lg:grid-cols-2 lg:gap-4 lg:mb-4">
+          <div className="w-full xl:grid xl:grid-cols-2 xl:gap-4 xl:mb-4">
             <div className="flex items-center mb-4">
-              <label htmlFor="simple-search" className="sr-only">
-                Search
-              </label>
               <div className="relative w-full">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none z-10">
                   <IoSearchSharp className="size-5 fill-white" />
                 </div>
                 <input
@@ -54,22 +53,17 @@ export const VerRequerimientos = () => {
               </div>
             </div>
 
-            <div className="mb-4 lg:flex lg:items-center lg:justify-end lg:m-0">
+            <div className="mb-4 xl:flex xl:items-center xl:justify-end xl:m-0 xl:gap-2">
               <button
                 type="button"
-                className="w-full text-white bg-tertiary hover:opacity-50 duration-150 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 flex items-center justify-center gap-2 lg:w-max"
+                className="w-full text-white bg-tertiary hover:opacity-50 duration-150 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 flex items-center justify-center gap-2 md1:m-0 xl:w-max"
+                onClick={handleOpenAddRequeriment}
               >
                 <MdAddchart />
                 Requerimiento
               </button>
 
-              <div className="flex items-center justify-end gap-2 mt-4 lg:m-0">
-                <FiltrarPor
-                  title="Elegir grupo"
-                  items={listaGrupos}
-                  isOpen={openDropdown === "grupo"}
-                  toggleDropdown={() => toggleDropdown("grupo")}
-                />
+              <div className="flex items-center justify-end gap-2 mt-4 xl:m-0">
                 <FiltrarPor
                   title="Prioridad"
                   items={listaPrioridades}
@@ -98,6 +92,12 @@ export const VerRequerimientos = () => {
           />
         </div>
       </section>
+
+      {openAddRequeriment && (
+        <AgregarRequerimiento
+          handleOpenAddRequeriment={handleOpenAddRequeriment}
+        />
+      )}
     </InicioTemplate>
   );
 };

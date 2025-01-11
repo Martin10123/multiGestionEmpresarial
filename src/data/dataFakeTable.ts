@@ -2,7 +2,6 @@ export interface DataFakeInterfa {
   id: number;
   requerimiento: string;
   categoria: string;
-  grupo: string;
   descripcion: string;
   prioridad: "Alta" | "Media" | "Baja";
   responsable: string;
@@ -16,9 +15,8 @@ export const dataFake: DataFakeInterfa[] = Array.from(
   (_, i) => ({
     id: i + 1,
     requerimiento: `Requerimiento ${i + 1}`,
-    categoria: "Categoría " + ((i % 5) + 1),
-    grupo: "Grupo " + ((i % 3) + 1),
     descripcion: `Descripción ${i + 1}`,
+    categoria: "Categoría " + ((i % 5) + 1),
     prioridad: ["Alta", "Media", "Baja"][i % 3] as "Alta" | "Media" | "Baja",
     responsable: `Responsable ${i + 1}`,
     fechaCreacion: `2025-01-${(i % 31) + 1}`,

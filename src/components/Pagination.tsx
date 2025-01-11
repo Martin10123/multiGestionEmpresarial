@@ -45,7 +45,7 @@ export const Pagination = <T,>({
         </select>
       </div>
 
-      <ul className="flex w-full justify-between">
+      <ul className="w-full flex justify-between md1:w-max">
         <li className="flex-1">
           <button
             className="w-full px-3 py-2 border border-tertiary rounded text-sm h-full flex items-center justify-center"

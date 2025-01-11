@@ -13,7 +13,7 @@ export const FiltrarPor: React.FC<FilterByType> = ({
   return (
     <div className="relative border border-tertiary rounded-lg w-full">
       <div
-        className="w-full p-2 flex items-center justify-center gap-2 cursor-pointer"
+        className="w-full p-2.5 flex items-center justify-center gap-2 cursor-pointer"
         onClick={toggleDropdown}
       >
         <CiFilter />

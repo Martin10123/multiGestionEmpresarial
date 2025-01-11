@@ -11,13 +11,10 @@ export const TableRequeriment = ({ data }: { data: DataFakeInterfa[] }) => {
               Requerimiento
             </th>
             <th scope="col" className="px-4 py-3">
-              Categoria
-            </th>
-            <th scope="col" className="px-4 py-3">
-              Grupo
-            </th>
-            <th scope="col" className="px-4 py-3">
               Descripción
+            </th>
+            <th scope="col" className="px-4 py-3">
+              Categoria
             </th>
             <th scope="col" className="px-4 py-3">
               Prioridad
@@ -43,15 +40,14 @@ export const TableRequeriment = ({ data }: { data: DataFakeInterfa[] }) => {
               <td className="px-6 py-4 font-medium whitespace-nowrap">
                 {item.requerimiento}
               </td>
-              <td className="px-4 py-3">{item.categoria}</td>
-              <td className="px-4 py-3">{item.grupo}</td>
-              <td className="px-4 py-3">{item.descripcion}</td>
-              <td className="px-4 py-3">{item.prioridad}</td>
-              <td className="px-4 py-3">{item.responsable}</td>
-              <td className="px-4 py-3">{item.fechaCreacion}</td>
-              <td className="px-4 py-3">{item.estado}</td>
-              <td className="px-4 py-3">{item.fechaLimite}</td>
-              <td className="px-4 py-3 flex items-center justify-end">
+              <td className="px-4 py-3 md1:py-6">{item.descripcion}</td>
+              <td className="px-4 py-3 md1:py-6">{item.categoria}</td>
+              <td className="px-4 py-3 md1:py-6">{item.prioridad}</td>
+              <td className="px-4 py-3 md1:py-6">{item.responsable}</td>
+              <td className="px-4 py-3 md1:py-6">{item.fechaCreacion}</td>
+              <td className="px-4 py-3 md1:py-6">{item.estado}</td>
+              <td className="px-4 py-3 md1:py-6">{item.fechaLimite}</td>
+              <td className="px-4 py-3 md1:py-6 flex items-center justify-end">
                 <button
                   className="inline-flex items-center p-0.5 text-sm font-medium text-center rounded-lg"
                   type="button"
