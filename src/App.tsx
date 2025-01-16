@@ -1,11 +1,9 @@
-// import { Dashboard } from "./pages/dashboard/Dashboard";
-
-import { SeeRequeriment } from "./pages/requirements/SeeRequeriment";
+import { AddRequeriment } from "./pages/requirements/AddRequeriment";
 
 function App() {
   return (
     <>
-      <SeeRequeriment />
+      <AddRequeriment />
     </>
   );
 }

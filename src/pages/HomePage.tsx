@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { InicioTemplate } from "../templates/HomeTemplate";
+import { HomeTemplate } from "../templates/HomeTemplate";
 
-export const InicioPrincipalPantalla = () => {
+export const HomePage = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const handleToggleSidebar = () => {
@@ -9,7 +9,7 @@ export const InicioPrincipalPantalla = () => {
   };
 
   return (
-    <InicioTemplate>
+    <HomeTemplate>
       <section className="pt-20 md:max-w-screen-md md:m-auto md1:p-0">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-5xl">
@@ -48,6 +48,6 @@ export const InicioPrincipalPantalla = () => {
           </div>
         </div>
       </section>
-    </InicioTemplate>
+    </HomeTemplate>
   );
 };

@@ -1,31 +1,19 @@
 import { FilterBy } from "@/components/pages/requeriments/FilterBy";
-import { TableRequeriment } from "@/components/pages/requeriments/TableRequeriment";
-import { Pagination } from "@/components/Pagination";
-import { dataFake } from "@/data/dataFakeTable";
-import { listCategories, listPriorities } from "@/data/filterBy";
+import { listCategoriesFilter, listPriorities } from "@/data/filterBy";
 import { HomeTemplate } from "@/templates/HomeTemplate";
 import { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdAddchart } from "react-icons/md";
-import { AddRequeriment } from "./AddRequeriment";
+import { TableComponent } from "@/components/TableComponent";
+
+import datatable from "@/MOCK_DATA.json";
+import { columnsData, RowTableColumn } from "@/data/columnTableFake";
+import { OptionsItemTable } from "@/components/pages/requeriments/OptionsItemTable";
+import { Row } from "@tanstack/react-table";
 
 export const SeeRequeriment = () => {
-  const [dataFakeOption] = useState(dataFake);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openAddRequeriment, setOpenAddRequeriment] = useState(false);
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
-
-  const paginatedData = dataFake.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
-
-  const onItemsPerPageChange = (value: number) => {
-    setItemsPerPage(value);
-    setCurrentPage(1);
-  };
 
   const toggleDropdown = (dropdown: string) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
@@ -34,6 +22,17 @@ export const SeeRequeriment = () => {
   const handleOpenAddRequeriment = () => {
     setOpenAddRequeriment(!openAddRequeriment);
   };
+
+  const columnsWithActions = [
+    ...columnsData,
+    {
+      id: "actions123",
+      header: "Acciones",
+      cell: ({ row }: { row: Row<RowTableColumn> }) => (
+        <OptionsItemTable row={row} />
+      ),
+    },
+  ];
 
   return (
     <HomeTemplate>
@@ -73,29 +72,17 @@ export const SeeRequeriment = () => {
                 <FilterBy
                   classNameDrop="right-0"
                   title="Categoria"
-                  items={listCategories}
+                  items={listCategoriesFilter}
                   isOpen={openDropdown === "categoria"}
                   toggleDropdown={() => toggleDropdown("categoria")}
                 />
               </div>
             </div>
           </div>
-
-          <TableRequeriment data={paginatedData} />
-
-          <Pagination
-            data={dataFakeOption}
-            currentPage={currentPage}
-            itemsPerPage={itemsPerPage}
-            onPageChange={setCurrentPage}
-            onItemsPerPageChange={onItemsPerPageChange}
-          />
         </div>
-      </section>
 
-      {openAddRequeriment && (
-        <AddRequeriment handleOpenAddRequeriment={handleOpenAddRequeriment} />
-      )}
+        <TableComponent data={datatable} columns={columnsWithActions} />
+      </section>
     </HomeTemplate>
   );
 };

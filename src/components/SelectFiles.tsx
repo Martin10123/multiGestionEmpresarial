@@ -46,7 +46,7 @@ export const SelectFiles = ({
     <div>
       <label
         htmlFor="text"
-        className="w-max block mb-2 text-sm font-medium text-gray-900"
+        className="block text-base font-medium text-black mb-2"
       >
         Imagenes
       </label>
@@ -83,7 +83,7 @@ export const SelectFiles = ({
                 ? "Sueltalo aquí..."
                 : "Arrastra y sueltalas imagenes aquí o"}{" "}
             </span>
-            <span className="bg-transparent font-semibold text-white hover:text-blue-700 rounded-lg decoration-2 hover:underline focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2">
+            <span className="bg-transparent font-semibold text-white hover:text-secondary rounded-lg decoration-2 hover:underline focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2">
               Selecciona las imagenes
             </span>
           </div>
